@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Pixelated Views | Flickr Tools jQuery Plugin</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="" /> 
+	<meta name="keywords" content="" />
+	<meta name="google-site-verification" content="t2yy9wL1bXPiPQjBqDee2BTgpiGQjwVldlfa4X5CQkU" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+	<link rel="alternate" href="www.pixelatedviews.com" hreflang="en-us" />
+
+	<script src="js/css.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="//code.jquery.com/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.flickrtools.js" type="text/javascript" charset="utf-8"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<script>
+		$(document).ready(function(){
+			/* ===== HOME PAGE FLICKR DATA ===== */
+			$('#slick-flickr').slick({
+				slidesToShow: 3,
+				slidesToScroll: 1,
+				centerMode: true,
+				centerPadding: '60px',
+				autoplay: true,
+				autoplaySpeed: 2000,
+				arrows: true,
+				focusOnSelect: true,
+				infinite: true,
+				lazyLoad: 'ondemand',
+				variableWidth: true
+			});
+			$.flickrtools().getFlickrData({
+					userId: '15473210@N04',
+					apiKey: '882cab5548d53c9e6b5fb24d59cc321d',
+					tags: 'pixelatedviewsgallery',
+				},
+				{ '#flickrHero' : $.flickrtools().rotateFlickrHero,
+				  '#slick-flickr' : $.flickrtools().loadSlickFromFlickr
+				}
+			);
+		});
+	</script>
+	
+</head>
+
+<body>
+	
+	<div class="grid10 push1">
+	
+		<div>
+			<div class="button pull-left"><a href="//www.pixelatedviews.com">Home</a></div>
+			<div class="button push-right"><a href="//www.pixelatedviews.com/downloads/flickrtools-latest.zip">Download</a></div>
+		</div>
+		
+
+		<div class="row">	
+			<!-- PAGE HERO -->
+			<div class="callout-header grid12">
+				<h2 class="callout-title">Hero Image</h2>
+			</div>
+			<div id="page-hero" class="grid12">
+				<img src="#" id="flickrHeroPreload" alt="Pixelated Views Hero Photo" style="display:none;" />
+				<img src="#" id="flickrHero" alt="Pixelated Views Hero Photo"/>
+				<div id="flickrHeroCount">0 / 0</div>
+			</div>
+			<!-- / PAGE HERO -->
+		</div>
+	
+	
+		<div class="row">	
+			<!-- ===== SLICK FLICKR ===== -->
+			<div id="slickFlickrCards" class="column callout grid12">
+				<div class="callout-header grid12">
+					<h2 class="callout-title">My Flickr Photos</h2>
+				</div>
+				<div class="callout-body grid12">
+					<div class="grid12">
+						<div id="slick-flickr">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ===== ===== ===== ===== -->
+		</div>
+		
+		
+		<div>
+
+			<div class="callout-header grid12">
+				<h2 class="callout-title">Documentation</h2>
+			</div>
+							
+			<h3>Download</h3>
+			<ul>
+			<li><p><a href="downloads/flickrtools-latest.zip">flickrtools - latest</a></p>
+			<li><p><a href="downloads/flickrtools-1.0.zip">flickrtools v. 1.0</a></p>
+			</ul>
+						
+			<h3>Setup</h3>
+			<ul>
+			<li><p>This javascript plugin requires jQuery, and should be loaded after the initial jQuery library.</p>
+			<li><p>You must have a flickr app defined on the flickr site for this to work.</p>
+			<li><p>Add the JavaScript of this page to your site, change all the parameters to fit your needs (see below), and test.
+			</ul>
+					
+		</div>
+
+	</div>
+
+</body>
+</html>
