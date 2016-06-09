@@ -1,3 +1,16 @@
+/*!
+ * SocialCards v. 1.0
+ * http://www.pixelatedviews.com/socialcards.html
+ *
+ * Copyright (c) 2016, Brian Whaley <brian.whaley@gmail.com>
+ * Released under the MIT license
+ * https://opensource.org/licenses/mit-license.php
+ *
+ * Date: 2016-06-08T12:58Z
+ *
+ */
+ 
+ 
 /* ========================================
 =====      GLOBAL VARIABLES           =====
 ======================================== */
