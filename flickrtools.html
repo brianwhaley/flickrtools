@@ -8,15 +8,18 @@
 	<meta name="keywords" content="" />
 	<meta name="google-site-verification" content="t2yy9wL1bXPiPQjBqDee2BTgpiGQjwVldlfa4X5CQkU" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+	<link rel="shortcut icon" type="image/x-icon" href="http://www.pixelatedviews.com/images/favicon.ico" />
 	<link rel="alternate" href="www.pixelatedviews.com" hreflang="en-us" />
 
+	<!-- CSS JS -->
 	<script src="js/css.js" type="text/javascript" charset="utf-8"></script>
-
+	<!-- LESS -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js" type="text/javascript" charset="utf-8"></script>
+
 	<script src="//code.jquery.com/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/jquery.flickrtools.js" type="text/javascript" charset="utf-8"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/pixelated.js" type="text/javascript" charset="utf-8"></script>
 
 	<script>
 		$(document).ready(function(){
@@ -49,68 +52,149 @@
 </head>
 
 <body>
-	
-	<div id="page-body" class="grid10 push1">
-	
-		<div>
-			<div class="button pull-left"><a href="//www.pixelatedviews.com">Home</a></div>
-			<div class="button push-right"><a href="//www.pixelatedviews.com/downloads/flickrtools-latest.zip">Download</a></div>
-		</div>
-		
 
-		<div class="row">	
-			<!-- PAGE HERO -->
-			<div class="callout-header grid12">
-				<h2 class="callout-title">Hero Image</h2>
-			</div>
-			<div id="page-hero" class="grid12">
-				<img src="#" id="flickrHeroPreload" alt="Pixelated Views Hero Photo" style="display:none;" />
-				<img src="#" id="flickrHero" alt="Pixelated Views Hero Photo"/>
-				<div id="flickrHeroCount">0 / 0</div>
-			</div>
-			<!-- / PAGE HERO -->
-		</div>
-	
-	
-		<div class="row">	
-			<!-- ===== SLICK FLICKR ===== -->
-			<div id="slickFlickrCards" class="column callout grid12">
-				<div class="callout-header grid12">
-					<h2 class="callout-title">My Flickr Photos</h2>
-				</div>
-				<div class="callout-body grid12">
-					<div class="grid12">
-						<div id="slick-flickr">
-						</div>
-					</div>
+	<a name="top"></a>
+
+	<div id="panel-menu" class="pad">
+		<!--div>
+			<div class="panel-menu-header grid12">
+				<div class="panel-menu-button push-right">
+					<img src="images/mobile-menu2.png" />
 				</div>
 			</div>
-			<!-- ===== ===== ===== ===== -->
+		</div-->
+		<div class="accordion-menu">
 		</div>
-		
-		
-		<div>
-
-			<div class="callout-header grid12">
-				<h2 class="callout-title">Documentation</h2>
-			</div>
-							
-			<h3>Download</h3>
-			<ul>
-			<li><a href="downloads/flickrtools-latest.zip">flickrtools - latest</a>
-			<li><a href="downloads/flickrtools-1.0.zip">flickrtools v. 1.0</a>
-			</ul>
-						
-			<h3>Setup</h3>
-			<ul>
-			<li>This javascript plugin requires jQuery, and should be loaded after the initial jQuery library.
-			<li>You must have a flickr app defined on the flickr site for this to work.
-			<li>Add the JavaScript of this page to your site, change all the parameters to fit your needs (see below), and test.
-			</ul>
-					
-		</div>
-
 	</div>
+	
+	<!-- PAGE CONTAINER -->
+	<div id="page-container">
+	
+		<!-- / PAGE FIXED HEADER -->
+		<div id="fixed-header" class="grid12">
+	
+			<!-- PAGE HEADER -->
+			<div id="page-header" class="grid12">
+				<div class="content-container">
+					<div class="panel-menu-button pull-left">
+						<img src="images/mobile-menu2.png" />
+					</div>
+					<h1 class="pull-left">Pixelated Views Template</h1>
+					<div class="addthis_sharing_toolbox push-right noMobile"></div>
+				</div>
+			</div>
+			<!-- / PAGE HEADER -->
+		
+			<!-- PAGE NAV -->
+			<div id="page-nav" class="grid12">
+				<div class="content-container">
+				</div>
+			</div>
+			<!-- / PAGE NAV -->
+			
+		</div>
+		<!-- / PAGE FIXED HEADER -->
 
+		<!-- PAGE FIXED HEADER SPACER -->
+		<div id="fixed-header-spacer" class="grid12">
+		</div>
+		<!-- / PAGE FIXED HEADER SPACER -->
+
+		<!-- PAGE SEARCH -->
+		<div id="page-search" class="grid12 noMobile">
+			<div class="content-container">
+				<gcse:search></gcse:search>
+			</div>
+		</div>
+		<!-- / PAGE SEARCH -->
+		
+		<!-- PAGE BODY -->
+		<div id="page-body" class="grid12">
+			<div class="content-container">
+			
+			
+			
+			
+			
+	
+				<div class="grid10 push1">
+	
+					<div>
+						<div class="button pull-left"><a href="https://github.com/brianwhaley/flickrtools">Download</a></div>
+					</div>
+		
+
+					<div class="row">	
+						<!-- PAGE HERO -->
+						<div class="callout-header grid12">
+							<h2 class="callout-title">Hero Image</h2>
+						</div>
+						<div id="page-hero" class="grid12">
+							<img src="#" id="flickrHeroPreload" alt="Pixelated Views Hero Photo" style="display:none;" />
+							<img src="#" id="flickrHero" alt="Pixelated Views Hero Photo"/>
+							<div id="flickrHeroCount">0 / 0</div>
+						</div>
+						<!-- / PAGE HERO -->
+					</div>
+	
+	
+					<div class="row">	
+						<!-- ===== SLICK FLICKR ===== -->
+						<div id="slickFlickrCards" class="column callout grid12">
+							<div class="callout-header grid12">
+								<h2 class="callout-title">My Flickr Photos</h2>
+							</div>
+							<div class="callout-body grid12">
+								<div class="grid12">
+									<div id="slick-flickr">
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- ===== ===== ===== ===== -->
+					</div>
+		
+		
+					<div>
+
+						<div class="callout-header grid12">
+							<h2 class="callout-title">Documentation</h2>
+						</div>
+							
+						<h3>Download</h3>
+						<ul>
+						<li><a href="downloads/flickrtools-latest.zip">flickrtools - latest</a>
+						<li><a href="downloads/flickrtools-1.0.zip">flickrtools v. 1.0</a>
+						</ul>
+						
+						<h3>Setup</h3>
+						<ul>
+						<li>This javascript plugin requires jQuery, and should be loaded after the initial jQuery library.
+						<li>You must have a flickr app defined on the flickr site for this to work.
+						<li>Add the JavaScript of this page to your site, change all the parameters to fit your needs (see below), and test.
+						</ul>
+					
+					</div>
+
+				</div>
+
+
+
+
+
+
+			</div>
+		</div>
+		<!-- / PAGE BODY -->
+		
+		<!-- PAGE FOOTER -->
+		<div id="page-footer" class="grid12">
+			<div class="content-container">
+			</div>
+		</div>
+		<!-- / PAGE FOOTER -->
+		
+	</div>
+	<!-- / PAGE CONTAINER -->
 </body>
 </html>
