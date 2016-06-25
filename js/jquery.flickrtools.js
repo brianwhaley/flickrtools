@@ -1,5 +1,5 @@
 /*!
- * SocialCards v. 1.0
+ * FlickrTools v. 1.0
  * http://www.pixelatedviews.com/socialcards.html
  *
  * Copyright (c) 2016, Brian Whaley <brian.whaley@gmail.com>
