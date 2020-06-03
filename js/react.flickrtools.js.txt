@@ -124,7 +124,9 @@ var FlickrHero = React.createClass({
   
 	render: function render() {
 		return (
-			<div className="flickrHero"></div>
+			<div>
+			<div className="flickrHero" />
+			</div>
 		);
 	}
 });
@@ -132,4 +134,82 @@ var FlickrHero = React.createClass({
 ReactDOM.render(
   React.createElement(FlickrHero, null),
   document.getElementById('flickrHero')
+);
+
+
+
+
+/* ======================================== */
+
+
+
+
+var FlickrSlick = React.createClass({
+	displayName: "FlickrSlick",
+
+	getInitialState: function getInitialState() {
+		return {
+
+			url: 'https://api.flickr.com/services/rest/?jsoncallback=?',
+			method: 'flickr.photos.search',
+			format: 'json',
+			userId: '15473210@N04',
+			apiKey: '882cab5548d53c9e6b5fb24d59cc321d',
+			tags: 'pixelatedviewsgallery',
+			perPage: 500,
+			
+			targetID: '#slick-flickr'
+		};
+	},
+	
+	componentDidMount: function componentDidMount() {
+		$.getJSON( this.state.url, {
+			method: this.state.method,
+			api_key: this.state.apiKey,
+			user_id: this.state.userId,
+			tags: this.state.tags,
+			per_page: this.state.perPage,
+			format: this.state.format
+			// jsoncallback: "?"
+			// nojsoncallback: "1"
+		})
+		.done(function(data){
+			console.log("Flickr API Call Completed.");
+			if(this.isMounted()){
+        		this.setState({ 
+					flickrData: data
+				});
+				this.addFlickrToSlick();
+			}
+		}.bind(this))
+		.fail(function() {
+			console.log("Flickr API Call failed.");
+		})
+		.always(function() {
+		});	
+	},
+	
+	addFlickrToSlick: function addFlickrToSlick() {
+		//$myTargetID = $(this.state.targetID); //$(this);
+		$.each(this.state.flickrSata.photos.photo, function(index) {
+			var myImg = this.state.flickrData.photos.photo[index];
+			var myImgBase = "https://farm" + myImg.farm + ".static.flickr.com/" + myImg.server + "/" + myImg.id + "_" + myImg.secret + ".jpg";
+			var myImgTag = '<img src="' + myImgBase + '" alt="' + myImg.title + '" title="' + myImg.title + '">'
+			$(this.state.targetID).slick('slickAdd', myImgTag );
+		});
+	}.bind(this),
+	
+	componentWillUnmount: function componentWillUnmount() {
+	},
+  
+	render: function render() {
+		return (
+			<div className="FlickrSlick"></div>
+		);
+	}
+});
+
+ReactDOM.render(
+  React.createElement(FlickrSlick, null),
+  document.getElementById('slick-flickr')
 );
